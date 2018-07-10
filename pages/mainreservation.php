@@ -75,7 +75,7 @@ if($_SESSION['role_id'] >= 0){
 		        <td> Customer Name: {{custname}} Group Name: {{groupname}}</td>
 		</tr>
 		<tr class="unit1">
-			<td> Address: {{Line_1}} {{Line_2}} </td>
+			<td> Address: {{Line_1}} Line 2(optional): {{Line_2}} </td>
                 <tr class="unit1">
                         <td> Email Address: {{Email}} </td>
                 </tr>
