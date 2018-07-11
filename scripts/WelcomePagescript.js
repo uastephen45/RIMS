@@ -6,10 +6,10 @@ scotchApp.config(function ($routeProvider) {
     $routeProvider
 
         // route for the home page
-        .when('/', {
+    .when('/', {
             templateUrl: 'pages/home.php',
             controller: 'homeScreenController'
-        })
+    })
 	.when('/mainreservations/newitem',{
 	    templateUrl :'pages/addReservationItem.php',
 	    controller:  'addReservationItemController'
@@ -23,29 +23,28 @@ scotchApp.config(function ($routeProvider) {
 	    controller : 'createnewreservationController'
 	})
         // route for the about page
-        .when('/customersearch', {
+    .when('/customersearch', {
             templateUrl: 'pages/customersearch.php',
             controller: 'customersearchController'
-        })
+    })
 	.when('/customersearch/reservations',{
 	    templateUrl: 'pages/reservationsearch.php', 
 	    controller : 'reservationsearchController'
 	})
         // route for the contact page
-        .when('/contact', {
+    .when('/contact', {
             templateUrl: 'pages/contact.html',
             controller: 'contactController'
         })
-        .when('/admin', {
+    .when('/admin', {
             templateUrl: 'pages/admin.php',
             controller: 'adminController'
         })
-        .when('/admin/selectuser', {
+    .when('/admin/selectuser', {
             templateUrl: 'pages/selectuser.php',
             controller: 'selectuserController'
         })
-
-        .when('/admin/adduser', {
+    .when('/admin/adduser', {
             templateUrl: 'pages/adduser.php',
             controller: 'adduserController'
         })
@@ -53,7 +52,7 @@ scotchApp.config(function ($routeProvider) {
 	    templateUrl: 'pages/addcustomer.php',
 	    controller: 'addcustomerController'
 	})
-        .when('/admin/modifyuser', {
+    .when('/admin/modifyuser', {
             templateUrl: 'pages/modifyuser.php',
             controller: 'modifyuserController'
         });
@@ -72,8 +71,7 @@ scotchApp.service('dataFactory', function () {
     this.getval = function () {
         return this.modifyuserid;
     }
-
-
+    
     var currentCustomerObject = 0;
 
     this.setcust = function (value) {
@@ -201,8 +199,6 @@ scotchApp.controller('addReservationItemController', function ($scope,$http,data
 
 
 });
-
-
 scotchApp.controller('createnewreservationController', function ($scope,$http,dataFactory) {
 
  	$scope.customerid = dataFactory.getval();
@@ -223,8 +219,6 @@ scotchApp.controller('createnewreservationController', function ($scope,$http,da
 	});
     });
 });
-
-
 scotchApp.controller('mainreservationController', function ($scope,$http,dataFactory){
 
 	$scope.Math = window.Math;	
@@ -278,8 +272,6 @@ scotchApp.controller('mainreservationController', function ($scope,$http,dataFac
 	document.location = "http://99.37.7.138:25565/Welcome.php#/mainreservations/newitem";
 	});
 });
-
-
 scotchApp.controller('reservationsearchController', function ($scope,$http,dataFactory) {
 	$scope.customerid = dataFactory.getval();
 	$scope.customerObj = dataFactory.getcust();
@@ -317,9 +309,6 @@ scotchApp.controller('reservationsearchController', function ($scope,$http,dataF
 		document.location = "http://99.37.7.138:25565/Welcome.php#/mainreservations";
 	});
 });
-
-
-// create the controller and inject Angular's $scope
 scotchApp.controller('homeScreenController', function ($scope,$http) {
     // create a message to display in our view
 	$scope.arrayofNumbers = [10,11,12,13,14,15,16,17];
@@ -331,8 +320,6 @@ scotchApp.controller('homeScreenController', function ($scope,$http) {
           
     });
 });
-
-
 scotchApp.controller('addcustomerController', function ($scope,$http,dataFactory) {
 	$scope.message = 'Add Customer Screen';
 	$scope.handleCustomerCreationRequest = (function(){
@@ -376,7 +363,6 @@ scotchApp.controller('addcustomerController', function ($scope,$http,dataFactory
 		});
 	});
 });
-
 scotchApp.controller('customersearchController', function ($scope, $http,dataFactory) {
     $scope.message = '';
 
@@ -401,15 +387,12 @@ scotchApp.controller('customersearchController', function ($scope, $http,dataFac
     }
     $scope.moveToAddNewCustomer = function() { document.location = "http://99.37.7.138:25565/Welcome.php#/newcustomer/"; }
 });
-
 scotchApp.controller('contactController', function ($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
 });
 scotchApp.controller('adminController', function ($scope) {
     $scope.message = 'You are on the admin page';
 });
-
-
 scotchApp.controller('modifyuserController', function ($scope, $http, dataFactory) {
     datatosend = dataFactory.getval();
 
@@ -476,11 +459,6 @@ scotchApp.controller('modifyuserController', function ($scope, $http, dataFactor
         }
     };
 });
-            
-            
-
-
-
 scotchApp.controller('adduserController', function ($scope, $http) {
                 $scope.handleUserCreationRequest = function () {
                     UnameToSend = document.getElementsByName('inputUserName')[0].value;
@@ -495,9 +473,6 @@ scotchApp.controller('adduserController', function ($scope, $http) {
                         });
                 }
             });
-
-
-
 scotchApp.controller('selectuserController', function ($scope, $http, dataFactory) {
                 $http.get('http://99.37.7.138:25565/phpscripts/getactiveusers.php').
                     then(function (response, dataFactory) {
@@ -507,4 +482,4 @@ scotchApp.controller('selectuserController', function ($scope, $http, dataFactor
                     dataFactory.setval(usertoremove);
                     window.location.href = "http://99.37.7.138:25565/Welcome.php#/admin/modifyuser";
                 }
-            });
+});
