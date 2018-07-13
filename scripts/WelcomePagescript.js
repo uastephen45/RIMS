@@ -8,7 +8,7 @@ scotchApp.config(function ($routeProvider) {
         // route for the home page
     .when('/', {
             templateUrl: 'pages/home.php',
-            controller: 'homeScreenController'
+        controller: 'homeScreenController'
     })
 	.when('/mainreservations/newitem',{
 	    templateUrl :'pages/addReservationItem.php',
@@ -309,16 +309,24 @@ scotchApp.controller('reservationsearchController', function ($scope,$http,dataF
 		document.location = "http://99.37.7.138:25565/Welcome.php#/mainreservations";
 	});
 });
-scotchApp.controller('homeScreenController', function ($scope,$http) {
+scotchApp.controller('homeScreenController', function ($scope,$http,date) {
     // create a message to display in our view
 	$scope.arrayofNumbers = [10,11,12,13,14,15,16,17];
     $scope.Mytruedata = [];	
-    $http.get('http://99.37.7.138:25565/phpscripts/getReservationDayData.php?type=1&lookupDate=2018-07-02').
-        then(function (responseText) {
-            console.log(responseText.data);
-		$scope.hourlydata = responseText.data;
-          
+    $scope.updateHomePage = (function (date) {
+
+        var d = DateConverter.getval(date);
+
+
+        $http.get('http://99.37.7.138:25565/phpscripts/getReservationDayData.php?type=1&lookupDate='+d).
+            then(function (responseText) {
+                console.log(responseText.data);
+                $scope.hourlydata = responseText.data;
+            });
+
+
     });
+
 });
 scotchApp.controller('addcustomerController', function ($scope,$http,dataFactory) {
 	$scope.message = 'Add Customer Screen';

@@ -49,10 +49,10 @@ if($_SESSION['role_id'] >= 0){
 
 
 
-<label> Date To Review: <input type="date" ng-model="customerdatag" ></label><br>
+<label> Date To Review: <input type="date" ng-model="customerdate" ></label><br>
 <center>
-TTTTEEEESSSSTTTT
-<button type="button" id="createNewCustomerButton" ng-click="moveToAddNewCustomer()">Create New Customer</button>
+
+<button type="button" id="createNewCustomerButton" ng-click="updateHomePage(customerdate)">Create New Customer</button>
 <table class="unit" ng-repeat="hdata in hourlydata | filter:$parent.$index">
 	<tr class="bord">
 		<td>Equipment Rental Time: </td>
