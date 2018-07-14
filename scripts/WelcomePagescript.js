@@ -96,7 +96,7 @@ scotchApp.service('DateConverter', function () {
 	if (day.length < 2) day = '0' + day;
 
 	CurrentDate = [year, month, day].join('-');
-	CurrentDate = CurrentDate + ' ' + '00' +':00:00';
+	CurrentDate = CurrentDate + ' ' + d.getHours() +':00:00';
 
 	return CurrentDate;
     }
@@ -106,7 +106,7 @@ scotchApp.service('DateConverter', function () {
 
 
 
-scotchApp.controller('addReservationItemController', function ($scope,$http,dataFactory) {
+scotchApp.controller('addReservationItemController', function ($scope,$http,dataFactory,DateConverter) {
     $scope.customerObj = dataFactory.getcust();  
     $scope.reservationID = $scope.customerObj.reservation_ID;
     $scope.Clickedforms = [];
