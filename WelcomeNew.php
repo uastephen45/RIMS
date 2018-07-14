@@ -55,8 +55,8 @@
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
-										<h2><a href="#">NTR Canoe Livery - </a><h2>
-											<h4> Hello, <?php echo  $_SESSION['login_user'], ' ', $_SESSION['role_id'] ?><h4>
+										<h2><a href="#">NTR Canoe Livery - </a></h2>
+											<h4> Hello, <?php echo  $_SESSION['login_user'], ' ', $_SESSION['role_id'] ?></h4>
 									</header>
 									<ul>
 										<li><a href="#">Home</a></li>
@@ -80,7 +80,7 @@
 									<ul class="contact">
 										<li class="fa-envelope-o"><a href="#">NTR@bright.net</a></li>
 										<li class="fa-phone">(330) 874-2002</li>
-										<li class="fa-home">11358 OH-212, </br>
+										<li class="fa-home">11358 OH-212, <br/>
 										Bolivar, OH 44612</li>
 									</ul>
 								</section>
