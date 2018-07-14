@@ -7,36 +7,25 @@
         <h1>New Customer</h1>
         <p class="ng-binding">Add Customer Screen</p>
 
-    <label>Custmer Name</label>
-    <input type="text" name="inputcustomerName">
+    <input type="text" placeholder="Customer Name" name="inputcustomerName">
 <br>
-    <label>Group Name</label>
-    <input type="text" name="inputgroupName">
+    <input type="text" placeholder="Group Name" name="inputgroupName">
 <br>
-    <label> Address Line 1</label>
-    <input type="text" name="inputaddressline1">
+    <input type="text" placeholder="Address Line 1" name="inputaddressline1">
 <br>
-    <label> Address Line 2</label>
-    <input type="text" name="inputaddressline2">
+    <input type="text" placeholder="Address Line 2" name="inputaddressline2">
 <br>
-    <label> City</label>
-    <input type="text" name="inputcity">
+    <input type="text" placeholder="City name="inputcity">
 <br>
-//constraint only does 2 chars
-    <label> State Code</label>
-    <input type="text" name="inputstatecode">
+    <input type="text" placeholder="State Code" name="inputstatecode">
 <br>
-    <label> Cell Phone</label>
-    <input type="text" name="inputcellphone">
+    <input type="text" placeholder="Cell Phone" name="inputcellphone">
 <br>
-    <label> Home Phome</label>
-    <input type="text" name="inputhomephone">
+    <input type="text" placeholder="Home Phone" name="inputhomephone">
 <br>
-    <label> Email Address </label>
-    <input type="text" name="inputemail">
+    <input type="text" placeholder="Email Address" name="inputemail">
 <br>
-    <label> Zip Code</label>
-    <input type="text" name="inputzipcode">
+    <input type="text" placeholder="Zip Code" name="inputzipcode">
 <br>
 
 
