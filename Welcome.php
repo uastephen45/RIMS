@@ -33,9 +33,6 @@
 
 							<!-- Content -->
 								<section>
-									<header class="main">
-										<h1>Welcome</h1>
-									</header>
 									  <div id="main">
 										<div ng-view>
 											<!-- this is where content will be injected -->

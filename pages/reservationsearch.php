@@ -1,71 +1,27 @@
-<html>
-<head>
-
-<style>
-li {
-  list-style:none;
-}
-
-.inputAdmin {
-	width:;
-	height:50px;
-	
-	font-size:12px;
-}
-
-tr{
-border:black solid 1px;
-}
-.unit {
-  text-decoration:none;
-  color:black;
-}
-.unit1 {
-  text-decoration:none;
-  color:black;
-}
-
-table{
-  margin:10px;
-}
-
-.unit:hover {
-  color:silver;
-}
-
-</style>
-
-</head>
-<body>
-
-
-
-
-
 <?php
 session_start();
 include('Session.php');
 
 if($_SESSION['role_id'] >= 0){
 ?>
-<div class="jumbotron text-center" ng-controller="reservationsearchController">
+<div class="" ng-controller="reservationsearchController">
         <h1>Reservation Search Page</h1>
         <center>
 	 <table>
-		<tr class="unit">
-			<td> Customer Name: {{custname}} Group Name: {{groupname}}</td>
+		<tr class="unit"  ng-click='editcustomer()'>
+			<td> Customer Name: {{custname}} Group Name: {{groupname}}</td> 
 		</tr>
-		<tr class="unit">
+		<tr class="unit1">
 			<td> Address: {{Line_1}} {{Line_2}} </td>
 		</tr>
 
-                <tr class="unit">
+                <tr class="unit1">
                         <td> City:  {{City}} State: {{State}} Zip: {{Zip}} </td>
                 </tr>
-                <tr class="unit">
+                <tr class="unit1">
                         <td> Cell Phone: {{Cell}} Home Phone: {{Home}} </td>
                 </tr>
-                <tr class="unit">
+                <tr class="unit1">
                         <td> Email Address: {{Email}} </td>
                 </tr>
 	</table>

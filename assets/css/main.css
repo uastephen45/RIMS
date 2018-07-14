@@ -73,6 +73,57 @@ input, select, textarea {
 
 /* Basic */
 
+
+li {
+  list-style:none;
+}
+
+.inputAdmin {
+	width:;
+	height:50px;
+	
+	font-size:12px;
+}
+
+tr.1{
+
+}
+tr.bord{
+border:black solid 1px;
+}
+.unit {
+  text-decoration:none;
+  color:black;
+}
+.unit1 {
+  text-decoration:none;
+  color:black;
+}
+
+table{
+  margin:10px;
+}
+
+.unit:hover {
+  color:silver;
+}
+
+div.ex1 {
+    background-color: lightblue;
+    width: 380px;
+    height: 400px;
+    overflow: scroll;
+}
+
+
+
+
+
+
+
+
+
+
 	@-ms-viewport {
 		width: device-width;
 	}

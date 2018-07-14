@@ -1,56 +1,4 @@
 <html>
-<head>
-<style>
-li {
-  list-style:none;
-}
-
-.inputAdmin {
-	width:;
-	height:50px;
-	
-	font-size:12px;
-}
-
-tr.1{
-
-}
-tr.bord{
-border:black solid 1px;
-}
-.unit {
-  text-decoration:none;
-  color:black;
-}
-.unit1 {
-  text-decoration:none;
-  color:black;
-}
-
-table{
-  margin:10px;
-}
-
-.unit:hover {
-  color:silver;
-}
-
-div.ex1 {
-    background-color: lightblue;
-    width: 380px;
-    height: 400px;
-    overflow: scroll;
-}
-
-</style>
-
-
-
-
-
-
-
-</head>
 <body>
 
 
@@ -66,7 +14,7 @@ if($_SESSION['role_id'] >= 0){
 
 
 
-<div class="jumbotron text-center" ng-controller="mainreservationController">
+<div class="" ng-controller="mainreservationController">
         <h1>Reservation Items Page</h1>
        
 	<center>
@@ -96,6 +44,7 @@ if($_SESSION['role_id'] >= 0){
 <button type="button" id="gobackbutton" ng-click="goback()">Back To Reservations</button>
 <br>
 <button type="button" id="MoveReservationForward" ng-click="MoveReservationForward()">Complete Reservation</button>
+<button type="button" id="MoveReservationForward" ng-click="checktodelete()">Remove Reservation</button>
 <table>
 	<tr class="1">
 		<td>Rental Cost: </td>
@@ -117,7 +66,7 @@ if($_SESSION['role_id'] >= 0){
 
 <br>
 <div class="ex1">
-<div ng-repeat="x in reservationdata" ng-click="customerClickedEvent(x.ID)">
+<div ng-repeat="x in reservationdata" ng-click="checktodeleteitem(x)">
 <table class="unit">
 	Item:{{$index + 1}}
 	<tr class="bord">

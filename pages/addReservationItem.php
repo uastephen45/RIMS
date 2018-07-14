@@ -3,7 +3,7 @@
    include('Session.php');
 ?>
 
-<div class="jumbotron text-center" ng-controller="addReservationItemController">
+<div class="" ng-controller="addReservationItemController">
         <h1>Add Item</h1>
 	
 

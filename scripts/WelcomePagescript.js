@@ -226,7 +226,24 @@ scotchApp.controller('createnewreservationController', function ($scope,$http,da
 
 
 scotchApp.controller('mainreservationController', function ($scope,$http,dataFactory){
-
+	$scope.checktodeleteitem = (function(reservationitem){
+		var d = confirm("Are you sure you want to remove item Type: "+ reservationitem.EquipmentType);
+		if(d==true){
+		window.alert("removing user");
+		}else{
+		window.alert("Cancled Removal");
+		}
+		
+	});
+	$scope.checktodelete = (function(reservationitem){
+		var d = confirm("Are you sure you want to delete this reservation?");
+		if(d==true){
+		window.alert("removing reservation from db...");
+		}else{
+		window.alert("Cancled Removal");
+		}
+		
+	});
 	$scope.Math = window.Math;	
 	$scope.customerid = dataFactory.getval();
 	$scope.customerObj = dataFactory.getcust();
@@ -293,7 +310,9 @@ scotchApp.controller('reservationsearchController', function ($scope,$http,dataF
 	$scope.Cell =  $scope.customerObj.Cell_Phone_Number;
 	$scope.Home = $scope.customerObj.Home_Phone_Number;
 	$scope.Email = $scope.customerObj.Email_Address;
-
+	$scope.editcustomer = (function(){
+	window.alert('youre trying to edit the customer');
+	});
 	$scope.goback = (function(){
 		document.location = "http://99.37.7.138:25565/Welcome.php#/customersearch";
 	});
@@ -343,6 +362,9 @@ scotchApp.controller('homeScreenController', function ($scope,$http,DateConverte
 
 scotchApp.controller('addcustomerController', function ($scope,$http,dataFactory) {
 	$scope.message = 'Add Customer Screen';
+	$scope.goback = (function(){
+		window.location.href = "http://99.37.7.138:25565/Welcome.php#/customersearch"	
+	});
 	$scope.handleCustomerCreationRequest = (function(){
 	//TODO Add Validation
 	//do the mapping 

@@ -3,7 +3,7 @@
    include('Session.php');
 ?>
 
-<div class="jumbotron text-center ng-scope" ng-controller="addcustomerController">
+<div ng-controller="addcustomerController">
         <h1>New Customer</h1>
         <p class="ng-binding">Add Customer Screen</p>
 
@@ -32,7 +32,8 @@
 
 
 
-<button type="button" name="buttonclicker" ng-click="handleCustomerCreationRequest()">Submit Reqeust</button>
+<button type="button" name="buttonclicker" ng-click="handleCustomerCreationRequest()">Submit Request</button>
+<button type="button" name="backclicker" ng-click="goback()">Go Back</button>
 <p>{{ message }}</p>
 
 </div>
