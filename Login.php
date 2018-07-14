@@ -1,3 +1,39 @@
+<?php
+   include("Config.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $myusername = $_POST['username'];
+      $mypassword = $_POST['password']; 
+      $sql = "SELECT User_ID FROM Users WHERE User_Name = '$myusername' and User_Password = '$mypassword' and User_Active = 1";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+        
+      $sql = "SELECT User_Role_ID FROM Users WHERE User_Name = '$myusername' and User_Password = '$mypassword'";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $_SESSION['role_id'] = $row['User_Role_ID'];
+
+         $_SESSION['login_user'] = $myusername;
+        //session_register("myusername");
+	  
+         header("location: Welcome.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
+
+
 <!DOCTYPE HTML>
 <html>
 	<head>
