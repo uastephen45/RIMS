@@ -1819,6 +1819,10 @@ input, select, textarea {
 		font-weight: 600;
 		margin: 0 0 1em 0;
 	}
+	
+	input[type=date]::-webkit-inner-spin-button{
+		-webkit-appearance: none;
+	}
 
 	input[type="text"],
 	input[type="password"],
